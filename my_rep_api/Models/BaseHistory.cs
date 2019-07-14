@@ -10,9 +10,9 @@ namespace myrep.Models
         public string Institution { get; set; }
 
         [JsonProperty(PropertyName = "from")]
-        public int From { get; set; }
+        public int? From { get; set; }
 
         [JsonProperty(PropertyName = "to")]
-        public int To { get; set; }
+        public int? To { get; set; }
     }
 }

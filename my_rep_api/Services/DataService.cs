@@ -24,7 +24,7 @@ namespace myrep.Services
 
         public async Task<IEnumerable<BaseProfile>> GetBaseProfilesAsync()
         {
-            return await _profilesCollection.Find(profile => true).ToListAsync();          
+            return await _profilesCollection.Find(profile => true).ToListAsync();
         }
 
         public async Task<IEnumerable<Profile>> GetFullProfilesAsync()
@@ -40,12 +40,12 @@ namespace myrep.Services
         
         public async Task<IEnumerable<BaseProfile>> GetBaseProfilesByPartyAsync(string party)
         {
-            return await _profilesCollection.Find(profile => profile.PoliticalParty == party).ToListAsync();
+            return await _profilesCollection.Find(profile => profile.PoliticalParty.Equals(party, StringComparison.OrdinalIgnoreCase)).ToListAsync();
         }
         
         public async Task<IEnumerable<BaseProfile>> GetBaseProfilesByTypeAsync(string memberType)
         {
-            return await _profilesCollection.Find(profile => profile.MemberType == memberType).ToListAsync();
+            return await _profilesCollection.Find(profile => profile.MemberType.Equals(memberType, StringComparison.OrdinalIgnoreCase)).ToListAsync();
         }
 
         public async Task<IEnumerable<BaseProfile>> SearchAllAsync(string searchString){

@@ -27,7 +27,7 @@ namespace myrep.Models
         public string BirthDate { get; set; }
 
         [JsonProperty(PropertyName = "term")]
-        public int Term { get; set; }
+        public int? Term { get; set; }
 
         [JsonProperty(PropertyName = "imageUrl")]
         public string ImageSource { get; set; }
