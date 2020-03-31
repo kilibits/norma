@@ -1,5 +1,4 @@
-# my_rep_api
-my_rep API 
+# norma
 
 Requirements:
 1. dotnet core 2.1
